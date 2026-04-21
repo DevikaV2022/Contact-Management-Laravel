@@ -7,16 +7,16 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     
-   public function up(): void
-   {
+    public function up(): void{
      Schema::create('contacts', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->text('message');
-        $table->string('role')->nullable();
-        $table->string('status')->default('pending');
-        $table->timestamps();
-      });
+      $table->id();
+      $table->string('name');
+      $table->string('email');
+      $table->string('phone');
+      $table->text('message');
+      $table->string('status')->default('New');
+      $table->timestamps();
+     });
     }
 
 };

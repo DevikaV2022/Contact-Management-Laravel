@@ -9,16 +9,24 @@ class ContactController extends Controller
 {
 
     public function store(Request $request){
-        // validation
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'message' => 'required'
-        ]);
+     // validation
+     $request->validate([
+        'name' => 'required',
+        'email' => 'required|email',
+        'phone' => 'required',
+        'message' => 'required'
+     ]);
 
-        // temporary success (DB save later)
-        return back()->with('success', 'Form submitted successfully!');
+     // SAVE TO DATABASE
+     Contact::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'phone' => $request->phone,
+        'message' => $request->message,
+        'status' => 'New'
+     ]);
+
+     return back()->with('success', 'Form submitted successfully!');
     }
 
     public function ContactList(){
