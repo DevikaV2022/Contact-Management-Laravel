@@ -35,12 +35,12 @@
           }
          </script>
 
-        <!-- FORGOT PASSWORD -->
+        <!-- FORGOT PASSWORD
         <div class="text-end mb-2">
           <a routerLink="/forgot-password" style="cursor:pointer; font-size: 14px;">
            Forgot Password?
           </a>
-        </div>
+        </div> -->
 
         <!-- LOGIN BUTTON -->
         <button class="btn w-100 mt-2" type="submit" [disabled]="loginForm.invalid"

@@ -27,9 +27,17 @@
     </div>
 
 </div>
+<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/laravel-echo@1.15.3/dist/echo.iife.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
+@auth
+<script>
+    Echo.private('user.{{ auth()->id() }}')
+    .listen('UserLoggedOut', () => {
+        window.location.href = "/login";
+    });
+</script>
+@endauth
 @yield('scripts')
 
 </body>

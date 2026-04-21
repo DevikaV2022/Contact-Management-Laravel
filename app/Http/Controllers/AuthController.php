@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Events\UserLoggedOut;
+
 
 class AuthController extends Controller
 {
@@ -57,14 +59,17 @@ class AuthController extends Controller
 
         // Role redirect
         if ($user->role === 'admin') {
-            return redirect('/admin/dashboard');
+            return redirect('admin/dashboard');
         } else {
             return redirect('/home');
         }
     }
 
     public function logout(Request $request){
+        print_r('hii');
+     event(new UserLoggedOut(auth()->id()));
      Auth::logout();
      return redirect('/login');
+
     }
 }
