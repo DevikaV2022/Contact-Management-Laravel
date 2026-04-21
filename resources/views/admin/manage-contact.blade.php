@@ -29,6 +29,7 @@
     </div>
 
     <!-- TABLE -->
+   <div class="table-responsive">  
     <table class="table table-bordered">
 
         <thead>
@@ -81,6 +82,7 @@
         </tbody>
 
     </table>
+   </div>
 
 </div>
 

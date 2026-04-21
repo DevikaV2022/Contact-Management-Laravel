@@ -4,6 +4,7 @@
         min-height: 100vh;
         background: linear-gradient(180deg, #18a558, #198754);
         color: white;
+        flex-shrink: 0;
     }
 
     .sidebar .nav-link {
@@ -50,22 +51,21 @@
     </div>
 
     <!-- MENU -->
-    <nav class="nav flex-column mt-3">
+  <nav class="nav flex-column mt-3">
 
-       <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
-        Dashboard
-       </a>
+   <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->is('admin/dashboard') ? 'active' : '' }}">
+    Dashboard
+   </a>
 
-       <a href="{{ route('admin.contact') }}" class="nav-link {{ request()->is('contact-list') ? 'active' : '' }}">
-        Contact List
-       </a>
+   <a href="{{ route('admin.contact') }}" class="nav-link {{ request()->is('admin/contact-list') ? 'active' : '' }}">
+    Contact List
+   </a>
 
-       <a href="{{ route('admin.manage') }}" class="nav-link {{ request()->is('manage-contact') ? 'active' : '' }}">
-        Manage Contact
-       </a>
+   <a href="{{ route('admin.manage') }}" class="nav-link {{ request()->is('admin/manage-contact') ? 'active' : '' }}">
+    Manage Contact
+   </a>
 
-    </nav>
-
+</nav>
     <!-- LOGOUT -->
     <div class="mt-auto">
 

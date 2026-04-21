@@ -30,7 +30,7 @@ class ContactController extends Controller
     }
 
     public function ContactList(){
-        $contacts = Contact::latest()->get();
+        $contacts = Contact::where('status', 'Accepted')->get();
         return view('admin.contact-list', compact('contacts'));
     }
 

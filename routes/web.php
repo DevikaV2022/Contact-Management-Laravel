@@ -26,7 +26,6 @@ Route::get('/home', function () {
 
 //=======================    ADMIN   =================================
 
-Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
 
 Route::prefix('admin')->middleware('auth')->name('admin.')->group(function () {
 

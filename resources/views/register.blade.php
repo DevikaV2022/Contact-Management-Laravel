@@ -1,9 +1,8 @@
-@extends('layouts.layout')
+@extends('layouts.auth')
 @section('title', 'Register')
 @section('content')
 
-<div class="w-100 d-flex justify-content-center align-items-center vh-100"
-    style="background: linear-gradient(to right, #1f8a5b, #2ecc71);">
+<div class="w-100 d-flex justify-content-center align-items-center h-100">
 
     @if(session('success'))
        <div class="text-success text-center">{{ session('success') }}</div>

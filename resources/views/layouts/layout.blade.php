@@ -8,14 +8,18 @@
     @yield('styles')
 </head>
 
-<body>
+<body style="margin:0;">
 
-<div class="d-flex">
+  <div class="d-flex" style="min-height:100vh;">
 
     {{-- SIDEBAR (ONLY ADMIN) --}}
-    @if(auth()->check() && auth()->user()->role === 'admin')
-        @include('layouts.sidebar')
-    @endif
+    @auth
+      @if(auth()->user()->role === 'admin')
+        <div style="width:250px; flex-shrink:0;">
+            @include('layouts.sidebar')
+        </div>
+      @endif
+    @endauth
 
     {{-- MAIN CONTENT --}}
     <div class="flex-grow-1 p-3">

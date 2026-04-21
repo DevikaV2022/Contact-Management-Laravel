@@ -1,9 +1,8 @@
-@extends('layouts.layout')
+@extends('layouts.auth')
 @section('title', 'Login')
 @section('content')
 
-<div class="container-fluid p-0 w-100 d-flex justify-content-center align-items-center vh-100"
-    style="background: linear-gradient(to right, #1f8a5b, #2ecc71);">
+<div class="w-100 d-flex justify-content-center align-items-center h-100">
 
   <div class="card p-4 shadow" style="width: 350px; border-radius: 12px;">
     <h2 class="text-center mb-3" style="color:#1f8a5b;">Welcome</h2>
